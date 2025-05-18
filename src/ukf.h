@@ -5,7 +5,7 @@
 #include "measurement_package.h"
 
 class UKF {
- public:
+public:
   /**
    * Constructor
    */
@@ -95,6 +95,19 @@ class UKF {
 
   // Sigma point spreading parameter
   double lambda_;
+
+  // Radar measurement noise covariance matrix
+  Eigen::MatrixXd R_radar_;
+
+  // Lidar measurement noise covariance matrix
+  Eigen::MatrixXd R_lidar_;
+
+  ///* the current NIS for radar
+  double NIS_radar_;
+
+  ///* the current NIS for laser
+  double NIS_laser_;
+
 };
 
 #endif  // UKF_H
